@@ -114,6 +114,7 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate
             vc.chatId = c_contact["chat_id"]!
             vc.chatName = self.names[indexPath.row].components(separatedBy: " ").first!
             vc.image = self.img[indexPath.row]
+            vc.flag = false
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else

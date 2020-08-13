@@ -109,6 +109,9 @@ class SideMenuViewController: UIViewController
             {
                 try Auth.auth().signOut()
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                let ref1 = Constants.refs.users.child(UserDefaults.standard.string(forKey: "uid")!).child("isActive")
+                ref1.setValue(false)
+                resetUserDefaults()
                 dismissProgress()
                 self.navigationController?.pushViewController(vc, animated: true)
             }

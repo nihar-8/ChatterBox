@@ -41,6 +41,15 @@ func dismissProgress()
 {
     SVProgressHUD.dismiss()
 }
+//MARK:- ResetUserdefaults
+func resetUserDefaults()
+{
+    let ud = UserDefaults.standard
+    ud.removeObject(forKey: "uid")
+    ud.removeObject(forKey: "name")
+    ud.removeObject(forKey: "email")
+    ud.removeObject(forKey: "profilePic")
+}
 //MARK:- AlertControllerExtension
 extension UIAlertController
 {

@@ -59,6 +59,8 @@ class LoginViewController: UIViewController
                                 UserDefaults.standard.set(data!, forKey: "profilePic")
                             }
                         }
+                        let ref1 = Constants.refs.users.child(UserDefaults.standard.string(forKey: "uid")!).child("isActive")
+                        ref1.setValue(true)
                         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UsersViewController") as! UsersViewController
                         dismissProgress()
                         self.navigationController?.pushViewController(vc, animated: true)

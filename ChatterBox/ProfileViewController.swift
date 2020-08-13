@@ -332,6 +332,7 @@ class ProfileViewController: UIViewController
                             }
                             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                             dismissProgress()
+                            resetUserDefaults()
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                     })

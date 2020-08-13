@@ -12,4 +12,5 @@ target 'ChatterBox' do
   pod 'Firebase/Database'
   pod 'SideMenu', '~> 6.0'
   pod 'SVProgressHUD'
+  pod 'JitsiMeetSDK', '~> 2.8.1'
 end

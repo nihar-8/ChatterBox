@@ -14,11 +14,14 @@ class ChatViewController: UIViewController
     @IBOutlet weak var messgaeField: UITextView!
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var msgHeight: NSLayoutConstraint!
+    @IBOutlet weak var video: UIButton!
+    @IBOutlet weak var audio: UIButton!
     //MARK:- Variables
     var messages = NSMutableArray()
     var chatId = ""
     var chatName = ""
     var image = UIImage(named: "dafaultUser")
+    var flag = true
     //MARK:- ViewDidLoad
     override func viewDidLoad()
     {
@@ -27,6 +30,8 @@ class ChatViewController: UIViewController
         tableView.estimatedRowHeight = 500
         chatTitle.text = chatName
         profilePic.image = image!
+        video.isHidden = flag
+        audio.isHidden = flag
         if isConnectedToNetwork()
         {
             showProgress()
@@ -72,6 +77,16 @@ class ChatViewController: UIViewController
     @IBAction func back(_ sender: Any)
     {
         self.navigationController?.popViewController(animated: true)
+    }
+    //MARK:- AudioCall
+    @IBAction func audioCall(_ sender: UIButton)
+    {
+        createAlert(title: "Alert", message: "Work In Progress. \(chatId)", vc: self)
+    }
+    //MARK:- VideoCall
+    @IBAction func videoCall(_ sender: UIButton)
+    {
+        createAlert(title: "Alert", message: "Work In Progress. \(chatId)", vc: self)
     }
 }
 //MARK:- TableviewDelegate/Datasource
